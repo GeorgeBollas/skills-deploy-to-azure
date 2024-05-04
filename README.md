@@ -19,6 +19,7 @@ _Create two deployment workflows using GitHub Actions and Microsoft Azure._
   Define terms and link to docs.github.com.
 -->
 
+
 ## Step 3: Spin up an environment based on labels
 
 _Nicely done! :heart:_
@@ -54,12 +55,14 @@ Copy and paste the following into this new file:
 ```yaml
 name: Configure Azure environment
 
+
 on:
   pull_request:
     types: [labeled]
 
 env:
   IMAGE_REGISTRY_URL: ghcr.io
+
   AZURE_RESOURCE_GROUP: cd-with-actions
   AZURE_APP_PLAN: actions-ttt-deployment
   AZURE_LOCATION: '"East US"'
@@ -161,6 +164,7 @@ The second job destroys Azure resources so that you do not use your free minutes
 1. Back in the Pull request, create and apply the `spin up environment` label to your open pull request
 1. Wait for the GitHub Actions workflow to run and spin up your Azure environment. You can follow along in the Actions tab or in the pull request merge box.
 1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+
 
 <footer>
 
